@@ -1,6 +1,7 @@
 const btn = document.querySelector("#btn");
 const header = document.querySelector("#header");
 const input = document.querySelector("#input");
+const copy = document.querySelector("#copyBtn");
 
 //rgb random color `rgb(255,255,200)`
 
@@ -31,6 +32,10 @@ btn.addEventListener("click", function () {
     document.body.style.backgroundColor = color;
     input.value = color;
   }, 1000);
+});
+copy.addEventListener("click", function () {
+  const value = input.value;
+  window.navigator.clipboard.writeText(value);
 });
 
 const hexColor = () => {
